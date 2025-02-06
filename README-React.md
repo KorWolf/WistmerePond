@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # WistmerePond
 A cozy, narrative-driven idle clicker where a lone fishing cat builds a home by the lake, collecting lost things and uncovering quiet stories. Built with React.
 
@@ -9,7 +8,8 @@ A cozy, narrative-driven idle clicker where a lone fishing cat builds a home by 
 This project and its contents, including but not limited to code, assets, and designs, are the exclusive property of Kor Wolf. Unauthorized use, reproduction, distribution, or modification of any part of this project is strictly prohibited without prior written permission.  
 
 For inquiries regarding licensing, contributions, or future releases, please contact: contactmesongbird@gmail.com.
-=======
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -80,4 +80,3 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `yarn build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
->>>>>>> 76006ec (Initial React project setup)
