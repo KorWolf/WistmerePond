@@ -78,3 +78,17 @@
 .game-menu button:hover {
     background: #70421e;
 }
+
+/* Game World (Draggable & Zoomable Area) */
+.game-world {
+    width: 200vw; /* Extend the world beyond the screen */
+    height: 200vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: transform 0.1s ease-out;
+    cursor: grab;
+    background: url("/assets/temp-background.png"); /* Reference from /public */
+    background-size: repeat;
+    background-repeat: repeat;
+}

@@ -1,43 +1,59 @@
 import React, { useState } from "react";
 import FishingArea from "./FishingArea";
+import { useGameControls } from "../utils/useGameControls";
+import GameMenu from "./GameMenu";
+import SettingsMenu from "./settings/SettingsMenu";
 
 function GameScreen() {
     const [fishCount, setFishCount] = useState(0);
     const [coinCount, setCoinCount] = useState(0);
     const [menuOpen, setMenuOpen] = useState(false);
+    const [settingsOpen, setSettingsOpen] = useState(false);
+
+    const {
+        gameAreaRef,
+        position,
+        zoom,
+        handlePointerDown,
+        handlePointerMove,
+        handlePointerUp
+    } = useGameControls();
 
     return (
         <div className="game-container">
             {/* Top Menu */}
             <div className="top-menu">
-                {/* Left: Currency Display */}
                 <div className="currency-display">
                     <div className="currency-box">🐟 {fishCount}</div>
                     <div className="currency-box">💰 {coinCount}</div>
                 </div>
 
-                {/* Right: Menu + Settings */}
                 <div className="top-menu-right">
                     <button className="menu-box" onClick={() => setMenuOpen(!menuOpen)}>📜 Menu</button>
-                    <button className="settings-box">⚙</button>
+                    <button className="settings-box" onClick={() => setSettingsOpen(true)}>⚙</button>
                 </div>
             </div>
 
             {/* Main Game Area */}
-            <div className="main-game-area">
+            <div
+                className="game-world"
+                ref={gameAreaRef}
+                style={{
+                    transform: `translate(${position.x}px, ${position.y}px) scale(${zoom})`,
+                }}
+                onPointerDown={handlePointerDown}
+                onPointerMove={handlePointerMove}
+                onPointerUp={handlePointerUp}
+                onPointerLeave={handlePointerUp} 
+            >
                 <FishingArea />
             </div>
 
-            {/* Expanded Menu (Only visible when menuOpen is true) */}
-            {menuOpen && (
-                <div className="game-menu">
-                    <h2>📜 Game Menu</h2>
-                    <button>🏡 Buildings</button>
-                    <button>🏪 Shops</button>
-                    <button>👥 NPCs</button>
-                    <button>🌱 Farms</button>
-                </div>
-            )}
+            {/* Game Menu Component */}
+            <GameMenu menuOpen={menuOpen} toggleMenu={() => setMenuOpen(false)} />
+
+            {/* Settings Menu (Only shown when open) */}
+            {settingsOpen && <SettingsMenu closeSettings={() => setSettingsOpen(false)} />}
         </div>
     );
 }
