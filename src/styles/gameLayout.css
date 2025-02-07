@@ -1,0 +1,69 @@
+/* General Game Layout */
+.game-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    background-color: #cce7f0; /* Light blue sky */
+  }
+  
+  /* --- TOP MENU --- */
+  .top-menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 10px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(255, 255, 255, 0.8);
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Currency Menu (Wooden Signs) */
+  .currency-menu {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .currency-menu.collapsed {
+    transform: translateX(-100%);
+  }
+  
+  .currency-item {
+    background-color: #8b5a2b; /* Brown wood color */
+    color: white;
+    padding: 8px 12px;
+    border-radius: 5px;
+    border: 2px solid #5a3c1a;
+    font-size: 16px;
+    min-width: 60px;
+    text-align: center;
+  }
+  
+  /* Collapse Button */
+  .collapse-btn {
+    background: transparent;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: black;
+  }
+  
+  /* Settings Button */
+  .settings-button {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: black;
+    margin-right: 15px;
+  }
+  
+  .settings-button:hover {
+    color: #444;
+  }
+  
