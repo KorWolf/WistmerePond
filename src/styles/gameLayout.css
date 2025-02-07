@@ -1,69 +1,80 @@
-/* General Game Layout */
-.game-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: 100vh;
-    background-color: #cce7f0; /* Light blue sky */
-  }
-  
-  /* --- TOP MENU --- */
-  .top-menu {
+/* Top Menu */
+.top-menu {
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    padding: 10px;
+    padding: 10px 15px; /* Ensures no clipping */
     position: fixed;
     top: 0;
     left: 0;
-    background-color: rgba(255, 255, 255, 0.8);
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
-  }
-  
-  /* Currency Menu (Wooden Signs) */
-  .currency-menu {
+    background-color: transparent;
+}
+
+/* Left Side: Currency Display */
+.currency-display {
     display: flex;
-    align-items: center;
-    gap: 10px;
-    transition: transform 0.3s ease-in-out;
-  }
-  
-  .currency-menu.collapsed {
-    transform: translateX(-100%);
-  }
-  
-  .currency-item {
-    background-color: #8b5a2b; /* Brown wood color */
+    gap: 15px;
+}
+
+/* Right Side: Menu + Settings (Now side by side) */
+.top-menu-right {
+    display: flex;
+    flex-direction: row; /* Ensures horizontal layout */
+    gap: 10px; /* Adds spacing between buttons */
+    align-items: center; /* Aligns them properly */
+}
+
+/* Currency, Menu, and Settings Boxes */
+.currency-box, .menu-box, .settings-box {
+    background-color: #8b5a2b;
     color: white;
     padding: 8px 12px;
     border-radius: 5px;
     border: 2px solid #5a3c1a;
-    font-size: 16px;
-    min-width: 60px;
+    font-size: 18px;
+    font-weight: bold;
+    min-width: 80px;
     text-align: center;
-  }
-  
-  /* Collapse Button */
-  .collapse-btn {
-    background: transparent;
-    border: none;
-    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     cursor: pointer;
-    color: black;
-  }
-  
-  /* Settings Button */
-  .settings-button {
-    background: none;
-    border: none;
-    font-size: 24px;
+}
+
+.menu-box:hover, .settings-box:hover {
+    background-color: #70421e;
+}
+
+/* Fixes Settings Button Alignment */
+.settings-box {
+    margin-right: 30px; /* Ensures it doesn’t touch the screen edge */
+}
+
+/* Game Menu */
+.game-menu {
+    position: absolute;
+    top: 50px;
+    right: 10px;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.game-menu button {
+    background: #8b5a2b;
+    color: white;
+    border: 2px solid #5a3c1a;
+    padding: 8px;
+    font-size: 16px;
     cursor: pointer;
-    color: black;
-    margin-right: 15px;
-  }
-  
-  .settings-button:hover {
-    color: #444;
-  }
-  
+    border-radius: 5px;
+}
+
+.game-menu button:hover {
+    background: #70421e;
+}
