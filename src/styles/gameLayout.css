@@ -6,6 +6,7 @@
     width: 100%;
     padding: 10px 15px; /* Ensures no clipping */
     position: fixed;
+    z-index: 100; /* Ensures it's above the game world */
     top: 0;
     left: 0;
     background-color: transparent;
@@ -91,4 +92,5 @@
     background: url("/assets/temp-background.png"); /* Reference from /public */
     background-size: repeat;
     background-repeat: repeat;
+    z-index: 1; /* Keeps it below UI elements */
 }
