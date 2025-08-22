@@ -2,8 +2,7 @@
 A cozy, narrative-driven idle clicker where a lost cat builds a home, collecting lost things and uncovering stories.
 
 
-# Wistmere Pond  
-© 2025 Kor Wolf. All Rights Reserved.  
+© 2025 Kor Wolf. All Rights Reserved. 
 
 This project and its contents, including but not limited to code, assets, and designs, are the exclusive property of Kor Wolf. Unauthorized use, reproduction, distribution, or modification of any part of this project is strictly prohibited without prior written permission.
 
