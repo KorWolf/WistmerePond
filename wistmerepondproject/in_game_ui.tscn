@@ -1,0 +1,159 @@
+[gd_scene load_steps=8 format=3 uid="uid://dtugc1dawdeba"]
+
+[ext_resource type="Texture2D" uid="uid://divbo5lu35myu" path="res://spritestuff/button.png" id="1_kenku"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kenku"]
+texture = ExtResource("1_kenku")
+region_rect = Rect2(37, 36, 22, 24)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_onc8m"]
+texture = ExtResource("1_kenku")
+region_rect = Rect2(37, 68, 22, 24)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_e6quo"]
+texture = ExtResource("1_kenku")
+region_rect = Rect2(37, 4, 22, 24)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cwbuu"]
+texture = ExtResource("1_kenku")
+region_rect = Rect2(419, 35, 25, 26)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4v80v"]
+texture = ExtResource("1_kenku")
+region_rect = Rect2(419, 66, 25, 26)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0qsvx"]
+texture = ExtResource("1_kenku")
+region_rect = Rect2(419, 3, 25, 26)
+
+[node name="inGameUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="gameScreen" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="topLeftUI" type="HBoxContainer" parent="gameScreen"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="gameScreen/topLeftUI"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="gameScreen/topLeftUI/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="NinePatchRect" type="NinePatchRect" parent="gameScreen/topLeftUI/VBoxContainer/MarginContainer"]
+custom_minimum_size = Vector2(160, 90)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("1_kenku")
+region_rect = Rect2(438, 137, 116, 46)
+
+[node name="MarginContainer" type="MarginContainer" parent="gameScreen/topLeftUI/VBoxContainer/MarginContainer/NinePatchRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 13
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="HBoxContainer" type="HBoxContainer" parent="gameScreen/topLeftUI/VBoxContainer/MarginContainer/NinePatchRect/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 20
+
+[node name="Settings" type="Button" parent="gameScreen/topLeftUI/VBoxContainer/MarginContainer/NinePatchRect/MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+theme_override_styles/hover = SubResource("StyleBoxTexture_kenku")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_onc8m")
+theme_override_styles/normal = SubResource("StyleBoxTexture_e6quo")
+
+[node name="Binder" type="Button" parent="gameScreen/topLeftUI/VBoxContainer/MarginContainer/NinePatchRect/MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+theme_override_styles/hover = SubResource("StyleBoxTexture_cwbuu")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_4v80v")
+theme_override_styles/normal = SubResource("StyleBoxTexture_0qsvx")
+
+[node name="topRightUI" type="HBoxContainer" parent="gameScreen"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="gameScreen/topRightUI"]
+layout_mode = 2
+
+[node name="NinePatchRect" type="NinePatchRect" parent="gameScreen/topRightUI/VBoxContainer"]
+custom_minimum_size = Vector2(240, 80)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+texture = ExtResource("1_kenku")
+region_rect = Rect2(438, 137, 116, 46)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="gameScreen/topRightUI/VBoxContainer"]
+layout_mode = 2
+
+[node name="NinePatchRect2" type="NinePatchRect" parent="gameScreen/topRightUI/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+texture = ExtResource("1_kenku")
+region_rect = Rect2(676, 5, 56, 56)
+
+[node name="NinePatchRect3" type="NinePatchRect" parent="gameScreen/topRightUI/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(160, 80)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+texture = ExtResource("1_kenku")
+region_rect = Rect2(204, 232, 79, 47)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="gameScreen/topRightUI/VBoxContainer/HBoxContainer/NinePatchRect3"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="gameScreen/topRightUI/VBoxContainer/HBoxContainer/NinePatchRect3/HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 16
+text = "Day 1, Year 1"
+
+[node name="Control" type="Control" parent="gameScreen/topRightUI/VBoxContainer/HBoxContainer/NinePatchRect3/HBoxContainer"]
+custom_minimum_size = Vector2(6, 0)
+layout_mode = 2
